@@ -26,7 +26,7 @@ public class InfoController {
     }
 
     private String readMetadata(String path) throws Exception {
-        URL url = new URL("http://169.254.169.254/latest/meta-data/" + path);
+        URL url = new URL("http://65.2.146.33/latest/meta-data/" + path);
         return new BufferedReader(new InputStreamReader(url.openStream()))
                 .readLine();
     }
