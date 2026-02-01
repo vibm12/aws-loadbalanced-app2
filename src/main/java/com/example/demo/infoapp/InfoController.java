@@ -16,18 +16,9 @@ public class InfoController {
     public Map<String, String> getInfo() throws Exception {
         Map<String, String> response = new HashMap<>();
 
-        String az = readMetadata("placement/availability-zone");
-        String region = az.substring(0, az.length() - 1);
-
-        response.put("region", region);
-        response.put("availabilityZone", az);
+        response.put("region", "ap-south-1");
+        response.put("availabilityZone", "ap-south-1a");
 
         return response;
-    }
-
-    private String readMetadata(String path) throws Exception {
-        URL url = new URL("http://65.2.146.33/latest/meta-data/" + path);
-        return new BufferedReader(new InputStreamReader(url.openStream()))
-                .readLine();
     }
 }
